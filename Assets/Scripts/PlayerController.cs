@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
-
+    public GameObject[] mizejiciDvere;
 
     public Vector3 jump;
     public float jumpForce = 2.0f;
@@ -79,6 +79,16 @@ public class PlayerController : MonoBehaviour
 
 
             SetCountText();
+            if (count >= 2)
+            {
+                //najdi objekt Level 1 a nech ho zmizet
+                mizejiciDvere = GameObject.FindGameObjectsWithTag("Level1");
+                foreach (GameObject dvere in mizejiciDvere)
+                {
+                    dvere.SetActive(false);
+                }
+           
+            }
 
         }
 
@@ -98,12 +108,16 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Level1"))
         {
-            if (count >= 5)
+            if (count >= 1)
             {
+                //other.gameObject.GetComponent<Renderer>().enabled = false;
+                //MeshRenderer mr = other.gameObject.GetComponent<MeshRenderer>();
+                //mr.enabled = false;
                 other.gameObject.SetActive(false);
             }
         }
 
+        
         if (other.gameObject.CompareTag("PickUp1"))
         {
             other.gameObject.SetActive(false);
