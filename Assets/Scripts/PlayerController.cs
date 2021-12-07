@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
 
             SetCountText();
-            if (count >= 2)
+            if (count >= 5)
             {
                 //najdi objekt Level 1 a nech ho zmizet
                 mizejiciDvere = GameObject.FindGameObjectsWithTag("Level1");
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Coblich Count: " + count.ToString() + "/5";
+        countText.text = "Počet koblich: " + count.ToString() + "/5";
     }
 
     void SetWinText()
