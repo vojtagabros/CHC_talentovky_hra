@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        
         if (other.gameObject.CompareTag("Zmizet"))
         {
             other.gameObject.SetActive(false);
@@ -103,8 +102,6 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
 
             count_Koruna = count_Koruna + 1;
-
-            SetWinText();
         }
         if (other.gameObject.CompareTag("Level1"))
         {
@@ -133,6 +130,9 @@ public class PlayerController : MonoBehaviour
             if (count_kort >= 1)
             {
                 other.gameObject.SetActive(false);
+                SetWinText();
+                Time.timeScale = 0f;
+                
             }
         }
 
