@@ -130,9 +130,10 @@ public class PlayerController : MonoBehaviour
             if (count_kort >= 1)
             {
                 other.gameObject.SetActive(false);
-                SetWinText();
+                
                 Time.timeScale = 0f;
                 
+                SetWinText();
             }
         }
 
@@ -155,8 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         
 
-
-        if (count_Koruna >= 1)
+        if (count_kort >= 1)
         {
             winTextObject.SetActive(true);
 
