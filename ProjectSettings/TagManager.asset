@@ -11,6 +11,7 @@ TagManager:
   - Koruna
   - Zmizet
   - smrt
+  - Zvuk1
   layers:
   - Default
   - TransparentFX

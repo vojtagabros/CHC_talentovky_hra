@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject Koruna;
+    public AudioSource Sound1;
+    public AudioSource Sound2;
+
 
     public GameObject Death_Wizard { get; private set; }
 
@@ -48,15 +51,13 @@ public class PlayerController : MonoBehaviour
         count = 0;
         count_kort = 0;
 
-        
         Koruna = GameObject.FindWithTag ("Koruna");
         Death_Wizard = GameObject.FindWithTag ("Kill");
        
-        
-        
 
         // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
+
     }
 
     void FixedUpdate()
@@ -77,6 +78,9 @@ public class PlayerController : MonoBehaviour
 
             count = count + 1;
 
+            Sound1.Play();
+
+            
 
             SetCountText();
             if (count >= 5)
@@ -134,6 +138,9 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 0f;
                 
                 SetWinText();
+
+                Sound2.Play();
+
             }
         }
 
@@ -181,9 +188,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
+
+       
     }
-
-
-
 
 }
