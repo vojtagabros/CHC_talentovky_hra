@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Koruna;
     public AudioSource Sound1;
     public AudioSource Sound2;
+    public AudioSource Soundtrack;
 
 
     public GameObject Death_Wizard { get; private set; }
@@ -79,6 +80,8 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
 
             Sound1.Play();
+
+            Soundtrack.Stop();
 
             
 
