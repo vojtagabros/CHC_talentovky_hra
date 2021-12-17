@@ -81,8 +81,7 @@ public class PlayerController : MonoBehaviour
 
             Sound1.Play();
 
-            Soundtrack.Stop();
-
+            
             
 
             SetCountText();
@@ -159,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Počet koblich: " + count.ToString() + "/5";
+        countText.text = "Počet koblih: " + count.ToString() + "/5";
     }
 
     void SetWinText()
