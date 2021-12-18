@@ -16,4 +16,5 @@ Následně jsem do hry postupně přidával různé elementy:
   - Přidal zvuky
 
 Nejlepší zdroj tutoriálů je youtube…
-Hru jsem začal postupně commitovat na můj vlastní Github účet. https://github.com/vojtagabros/CHC_talentovky_hra Používám aplikaci Github Desktop.![image](https://user-images.githubusercontent.com/80451481/146416240-d2ac107c-14a2-4a9a-8c84-dbf769e57a38.png)
+Hru jsem začal postupně commitovat na můj vlastní Github účet. https://github.com/vojtagabros/CHC_talentovky_hra Používám aplikaci Github Desktop.
+![Výstřižek - chctalentovka](https://user-images.githubusercontent.com/80451481/146652119-a52d20dd-d39f-44bd-8efb-04092ce9b475.png)
