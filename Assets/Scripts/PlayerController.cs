@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Death_Wizard { get; private set; }
 
-    public TextMeshProUGUI Kort;
-
     private float movementX;
     private float movementY;
 
@@ -32,9 +30,6 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
 
-    public bool RotateAroundPlayer = true;
-
-    public float RotationSpeed = 5.0f;
 
     private Rigidbody rb;
     private int count;
@@ -142,6 +137,8 @@ public class PlayerController : MonoBehaviour
                 SetWinText();
 
                 Sound2.Play();
+
+                Sound2.Stop();
 
             }
         }
