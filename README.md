@@ -12,8 +12,10 @@ Následně jsem do hry postupně přidával různé elementy:
   - Vodu, která míček vrátí na začátek hry
   - Pohybující se červené objekty, kterých se míček nesmí dotknout 
   - Čaroděje jsem vytvořil pomocí aplikace Gravity Sketch (VR - Oculus2)
-  - Materiály na textury různých objektů stahuji ...
+  - Materiály na textury různých objektů stahuji z https://assetstore.unity.com/
   - Přidal zvuky
+  
+  Hru si můžete zahrát na https://vojta-gabrhelik.itch.io/creative-hill-talentovka
 
 Nejlepší zdroj tutoriálů je https://www.youtube.com/c/Brackeys
 Hru jsem začal postupně commitovat na můj vlastní Github účet. https://github.com/vojtagabros/CHC_talentovky_hra Používám aplikaci Github Desktop.
