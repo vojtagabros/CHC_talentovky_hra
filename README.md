@@ -15,6 +15,6 @@ Následně jsem do hry postupně přidával různé elementy:
   - Materiály na textury různých objektů stahuji ...
   - Přidal zvuky
 
-Nejlepší zdroj tutoriálů je youtube…
+Nejlepší zdroj tutoriálů je https://www.youtube.com/c/Brackeys
 Hru jsem začal postupně commitovat na můj vlastní Github účet. https://github.com/vojtagabros/CHC_talentovky_hra Používám aplikaci Github Desktop.
 ![Výstřižek - chctalentovka](https://user-images.githubusercontent.com/80451481/146652119-a52d20dd-d39f-44bd-8efb-04092ce9b475.png)
