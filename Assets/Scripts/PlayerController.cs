@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private int count;
     private int count_Koruna;
-    private int count_kort;
+    private bool have_kord;
 
 
     // At the start of the game..
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         jump = new Vector3(0.0f, 2.0f, 0.0f);
         // Set the count to zero 
         count = 0;
-        count_kort = 0;
+        have_kord = false;
 
         Koruna = GameObject.FindWithTag ("Koruna");
         Death_Wizard = GameObject.FindWithTag ("Kill");
@@ -68,18 +68,15 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
+        //koblihy
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-
             count = count + 1;
-
             Sound1.Play();
-
-            
-            
-
             SetCountText();
+            
+            //při získání všech koblih - otevření velkých dveří
             if (count >= 5)
             {
                 //najdi objekt Level 1 a nech ho zmizet
@@ -93,58 +90,40 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        //zmizení textu na velkých dveřích
         if (other.gameObject.CompareTag("Zmizet"))
         {
             other.gameObject.SetActive(false);
         }
 
-        if (other.gameObject.CompareTag("Koruna"))
-        {
-            other.gameObject.SetActive(false);
-
-            count_Koruna = count_Koruna + 1;
-        }
-        if (other.gameObject.CompareTag("Level1"))
-        {
-            if (count >= 1)
-            {
-                //other.gameObject.GetComponent<Renderer>().enabled = false;
-                //MeshRenderer mr = other.gameObject.GetComponent<MeshRenderer>();
-                //mr.enabled = false;
-                other.gameObject.SetActive(false);
-            }
-        }
-
-        
+        //sebrání kordu
         if (other.gameObject.CompareTag("PickUp1"))
         {
             other.gameObject.SetActive(false);
-
-            count_kort = count_kort + 1;
-            
+            have_kord = true;
             KortX();
 
         }
 
+        //smrt death wizarda
         if (other.gameObject.CompareTag("Kill"))
         {
-            if (count_kort >= 1)
+            if (have_kord)
             {
                 other.gameObject.SetActive(false);
-                
                 Time.timeScale = 0f;
-                
-                SetWinText();
-
+                SetWinText();               
+                Soundtrack.Stop();
                 Sound2.Play();
-
-                Sound2.Stop();
 
             }
         }
 
 
     } 
+
+    
+    //pohyb kuličky z tutorialu
     void OnMove(InputValue value)
     {
         Vector2 v = value.Get<Vector2>();
@@ -153,32 +132,31 @@ public class PlayerController : MonoBehaviour
         movementY = v.y;
     }
 
+    //zobrazení počtu koblih
     void SetCountText()
     {
         countText.text = "Počet koblih: " + count.ToString() + "/5";
     }
 
+    //zobrazení velkého, červeného KONEC
     void SetWinText()
     {
-        
-
-        if (count_kort >= 1)
-        {
-            winTextObject.SetActive(true);
-
-        }
+          winTextObject.SetActive(true);
     }
 
-     void KortX ()
+    
+    void KortX ()
     {
         countText.text ="máš meč!";
     }
-
+    
+    //kód ze StackOverflow pro skákání
     void OnCollisionStay()
     {
         isGrounded = true;
     }
 
+    //kód ze StackOverflow pro skákání
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
